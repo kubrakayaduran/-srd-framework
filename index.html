@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thematic Classification of Socially Responsible Design Approaches — Open Participation Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F6F3;--text:#1D1D1B;--text-m:#4A4A46;--text-l:#8A8A84;--border:#E4E3DE;--card:#FFFFFF;--birey:#C4594A;--toplum:#3E7FAD;--cevre:#4D8B4D;--sistem:#7E5A9B;--gelecek:#B8892A;--accent:#C4594A;--r:10px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-thumb{background:#C8C8C2;border-radius:3px;}
+a{color:var(--accent);text-decoration:none;font-weight:600;}a:hover{text-decoration:underline;}
+.hero{background:linear-gradient(145deg,#1D1D1B 0%,#2E2E2A 50%,#1D1D1B 100%);color:#fff;padding:56px 24px 48px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+.hero-label{font-size:10px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.hero h1{font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(22px,3.8vw,32px);line-height:1.3;margin-bottom:14px;}
+.hero h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.65);}
+.hero p{font-size:14px;opacity:0.5;max-width:600px;line-height:1.75;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:780px;margin:0 auto;display:flex;overflow-x:auto;padding:0 24px;}
+.nav-btn{padding:14px 18px;border:none;background:0;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:var(--text-l);border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-btn:hover{color:var(--text);}.nav-btn.active{color:var(--text);border-bottom-color:var(--accent);}
+.wrap{max-width:780px;margin:0 auto;padding:28px 24px 80px;}
+.sec{display:none;}.sec.on{display:block;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:32px;}
+.card{background:var(--card);border-radius:var(--r);padding:22px;border:1px solid var(--border);cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.card[data-c="birey"]::before{background:var(--birey);}.card[data-c="toplum"]::before{background:var(--toplum);}
+.card[data-c="cevre"]::before{background:var(--cevre);}.card[data-c="sistem"]::before{background:var(--sistem);}
+.card[data-c="gelecek"]::before{background:var(--gelecek);}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.06);}
+.card h3{font-family:'Source Serif 4',serif;font-size:16px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.card h3 .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.card p{font-size:12px;color:var(--text-l);line-height:1.55;margin-bottom:14px;}
+.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;}
+.card .cnt{font-size:11px;color:var(--text-l);float:right;margin-top:2px;}
+.detail{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.detail-head{padding:24px;}.detail-head h2{font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;display:flex;align-items:center;gap:10px;}
+.detail-head p{font-size:13px;color:var(--text-l);margin-top:6px;line-height:1.6;}
+.bk{border:none;background:0;cursor:pointer;font-family:inherit;font-size:13px;color:var(--text-l);padding:8px 0;margin-bottom:12px;transition:color .15s;}.bk:hover{color:var(--text);}
+.tw{overflow-x:auto;}table{width:100%;border-collapse:collapse;font-size:13px;}
+thead{background:#F5F4F0;}th{padding:11px 14px;text-align:left;font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-m);border-bottom:2px solid var(--border);}
+td{padding:10px 14px;border-bottom:1px solid #F0EFEB;}tr:hover td{background:rgba(0,0,0,0.008);}td:first-child{font-weight:500;}
+.rel{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;text-align:center;}
+.rel h3{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin-bottom:20px;}
+.circles{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:18px;}
+.circ{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;}
+.arr{color:#C8C8C2;font-size:16px;}
+.rel>p{font-size:13px;color:var(--text-l);max-width:560px;margin:0 auto;line-height:1.7;}
+.axes{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:18px;}
+.ax{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;}
+.ax h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:10px;}
+.ax ul{list-style:none;font-size:12px;color:var(--text-m);}.ax li{padding:4px 0;border-bottom:1px solid #F5F4F0;}.ax li:last-child{border:none;}
+.cb{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:16px;}
+.cb h3{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin-bottom:10px;}
+.cb p{font-size:13px;color:var(--text-m);line-height:1.7;margin-bottom:16px;}
+.br{display:flex;flex-wrap:wrap;gap:10px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:all .2s;text-decoration:none!important;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+.bp{background:var(--accent);color:#fff;}.bs{background:#F0EFEB;color:var(--text);}.bg{background:0;border:1.5px solid var(--border);color:var(--text-m);}
+.steps{counter-reset:s;margin-top:24px;}.step{padding:18px 18px 18px 56px;margin-bottom:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);position:relative;font-size:13px;line-height:1.7;color:var(--text-m);}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;}
+.step strong{color:var(--text);}
+.info{background:linear-gradient(135deg,#FFF8F5,#FFF);border:1px solid #F0DDD6;border-radius:var(--r);padding:24px;margin-bottom:24px;}
+.info h3{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin-bottom:10px;}
+.info p{font-size:13px;color:var(--text-m);line-height:1.7;margin-bottom:10px;}.info p:last-child{margin:0;}
+.footer{text-align:center;padding:32px 24px;font-size:11px;color:var(--text-l);border-top:1px solid var(--border);}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}.axes{grid-template-columns:1fr;}th,td{padding:8px 10px;font-size:12px;}.wrap{padding:20px 16px 60px;}.br{flex-direction:column;}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card{animation:up .4s ease both;}.card:nth-child(2){animation-delay:.05s;}.card:nth-child(3){animation-delay:.1s;}.card:nth-child(4){animation-delay:.15s;}.card:nth-child(5){animation-delay:.2s;}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-inner">
+<div class="hero-label">Open Participation Platform</div>
+<h1>Thematic Classification of Socially Responsible Design Approaches: <em>A Holistic Framework Proposal</em></h1>
+<p>An open space for the validation and rethinking phases (Jabareen, 2009) of the proposed conceptual framework. Explore the classification, suggest new approaches, discuss existing categories.</p>
+</div></div>
+<div class="nav"><div class="nav-inner">
+<button class="nav-btn active" onclick="go('overview',this)">Framework Map</button>
+<button class="nav-btn" onclick="go('axes',this)">Analytical Axes</button>
+<button class="nav-btn" onclick="go('contribute',this)">Contribute</button>
+<button class="nav-btn" onclick="go('about',this)">About</button>
+</div></div>
+<div class="wrap">
+<div id="s-overview" class="sec on">
+<div id="cL"><div class="grid" id="G"></div>
+<div class="rel"><h3>Relational Structure of the Five Categories</h3>
+<div class="circles">
+<div class="circ" style="background:var(--birey)">I</div><span class="arr">⟷</span>
+<div class="circ" style="background:var(--toplum)">C</div><span class="arr">⟷</span>
+<div class="circ" style="background:var(--cevre)">E</div><span class="arr">⟷</span>
+<div class="circ" style="background:var(--sistem)">S</div><span class="arr">⟷</span>
+<div class="circ" style="background:var(--gelecek)">F</div>
+</div>
+<p>The five categories are not closed clusters separated by sharp boundaries, but analytical levels positioned in a continuum along the actor-focus axis. System-oriented approaches enable thinking about individual, community, and ecosystem actors together, while future-oriented approaches add temporal depth to all four categories.</p>
+</div></div>
+<div id="cD" style="display:none"></div>
+</div>
+<div id="s-axes" class="sec">
+<div class="info"><h3>Four Analytical Axes</h3>
+<p>57 design approaches were evaluated along four analytical axes. Actor focus was positioned as the primary axis of classification; the other three axes function as sub-variables enabling intra-category positioning.</p></div>
+<div class="axes">
+<div class="ax"><h4>&#9312; Actor Focus (primary)</h4><ul><li>&#9673; Individual — physical, cognitive, social</li><li>&#9678; Community — collectives, social networks</li><li>&#9672; Environment — ecosystems, planet</li><li>&#9671; System — socio-technical structures</li><li>&#9670; Future — alternative scenarios</li></ul></div>
+<div class="ax"><h4>&#9313; Intervention Scale</h4><ul><li>Micro — individual product/service</li><li>Mezzo — community/institution</li><li>Macro — system/planet</li></ul></div>
+<div class="ax"><h4>&#9314; Design Mission</h4><ul><li>Enhancing social welfare</li><li>Ensuring equal participation</li><li>Creating behavioural change</li><li>Raising awareness</li><li>Supporting environmental sustainability</li><li>Producing systemic transformation</li></ul></div>
+<div class="ax"><h4>&#9315; Temporal Orientation</h4><ul><li>Short-term</li><li>Short-to-medium term</li><li>Medium-term</li><li>Medium-to-long term</li><li>Long-term</li><li>Long-term / uncertain</li></ul></div>
+</div></div>
+<div id="s-contribute" class="sec">
+<div class="cb"><h3>Contribute to the Framework</h3>
+<p>This classification framework is designed as an open and evolving structure. You can contribute through GitHub Issues — each contribution becomes a citable, trackable, and discussable record. All submissions are reviewed by the researchers.</p>
+<div class="br">
+<a class="btn bp" id="bN" href="#" target="_blank">+ Suggest New Approach</a>
+<a class="btn bs" id="bM" href="#" target="_blank">&#9998; Propose Modification</a>
+<a class="btn bg" id="bC" href="#" target="_blank">&#128172; General Comment</a>
+</div></div>
+<div class="cb" style="background:var(--bg)"><h3>How It Works</h3>
+<div class="steps">
+<div class="step"><strong>Choose a contribution type above.</strong> A pre-formatted GitHub Issue will open with the relevant template — no GitHub experience needed.</div>
+<div class="step"><strong>Fill in the fields.</strong> For new approaches: name, proposed category, scale, mission, temporal orientation, and rationale with references. For modifications: specify the approach and explain your reasoning.</div>
+<div class="step"><strong>Submit.</strong> Your contribution becomes a public record that other researchers can discuss, support, or challenge through comments on the issue.</div>
+<div class="step"><strong>Review process.</strong> The research team evaluates all contributions and periodically updates the framework. Accepted contributions are credited.</div>
+</div></div>
+<div class="cb" style="background:var(--bg)"><h3>View All Contributions</h3>
+<p>Browse and discuss all submitted contributions:</p>
+<a class="btn bs" id="bA" href="#" target="_blank">&#128203; View All Issues on GitHub</a>
+</div></div>
+<div id="s-about" class="sec">
+<div class="info" style="background:linear-gradient(135deg,#F8F8F5,#FFF);border-color:var(--border);">
+<h3>About This Platform</h3>
+<p>This open participation platform accompanies the study titled <em>"Thematic Classification of Socially Responsible Design Approaches: A Holistic Framework Proposal."</em></p>
+<p>The study is grounded in Jabareen's (2009) conceptual framework analysis method. The first six phases have been applied; the validation and rethinking phases have been opened to collective participation through this platform.</p>
+<p><strong>57 design approaches</strong> associated directly or indirectly with socially responsible design were systematically examined along <strong>four analytical axes</strong>: actor focus, intervention scale, design mission, and temporal orientation.</p>
+<p><strong>Five thematic categories</strong> emerged: Individual-oriented, Community-oriented, Environment-oriented, System-oriented, and Future-oriented approaches.</p>
+<p><strong>Contribution types:</strong> New approach suggestion · Category/axis modification · General framework commentary.</p>
+</div></div>
+</div>
+<div class="footer">Socially Responsible Design — Open Participation Platform · Conceptual Framework Analysis (Jabareen, 2009)</div>
+<script>
+// ════════════════════════════════════════════════════
+// CONFIGURATION — Replace with your GitHub repo path
+// Example: "johndoe/srd-framework"
+var REPO="kubrakayaduran/srd_framework";
+// ════════════════════════════════════════════════════
+
+var D=[
+{id:"birey",t:"Individual-Oriented",L:"I",icon:"\u25C9",c:"var(--birey)",
+d:"Micro-scale approaches aimed at improving the individual\u2019s physical, cognitive, and emotional experience",
+r:[["Universal Design","Micro","Solutions usable by all regardless of age or ability","Short\u2013med"],
+["Inclusive Design","Micro","Mainstream products for the widest audience","Short\u2013med"],
+["Accessible Design","Micro","Adaptable solutions for people with disabilities","Short"],
+["Barrier-free Design","Micro","Removal of physical barriers","Short"],
+["Design for All","Micro","Equal participation for all","Short\u2013med"],
+["Ability-based Design","Micro","Focus on existing abilities, not limitations","Short\u2013med"],
+["Transgenerational Design","Micro","Flexibility across generations","Med\u2013long"],
+["Design for Dynamic Diversity","Micro","Adaptive interfaces for changing abilities","Med\u2013long"],
+["Human-centered Design","Micro","User-needs-driven process","Short\u2013med"],
+["Design for Aging","Micro","Supporting independent living","Medium"],
+["Design for Mental Health","Micro","Psychological well-being","Medium"],
+["Trauma-informed Design","Micro","Safe and predictable design","Medium"],
+["Salutogenic Design","Micro","Actively producing health","Medium"],
+["Capability-sensitive Design","Micro","Supporting capabilities","Medium"],
+["Positive Design","Micro","Pleasure, meaning, and virtue","Medium"],
+["Care-centered Design","Micro","Ethics of care in design","Medium"],
+["Humanitarian Design","Micro\u2192mezzo","Basic needs in crisis situations","Short"],
+["Persuasive Design","Micro","Behavioural nudging","Short\u2013med"],
+["Design for Behavioural Change","Micro","Sustainable behaviour","Medium"],
+["Emotionally Durable Design","Micro","Emotional bonds with products","Medium"],
+["Value Sensitive Design","Micro\u2192macro","Values embedded in technology","Medium"]]},
+{id:"toplum",t:"Community-Oriented",L:"C",icon:"\u25CE",c:"var(--toplum)",
+d:"Mezzo-scale approaches focused on communities, collective structures, and social networks",
+r:[["Community-based Design","Mezzo","Building local capacity","Medium"],
+["Participatory Design","Mezzo","Active user participation","Medium"],
+["Co-design","Mezzo","Equal partnership in design","Medium"],
+["Design for Social Innovation","Mezzo\u2192macro","New social practices","Med\u2013long"],
+["Public Interest Design","Mezzo","Design as a tool for social justice","Medium"],
+["Design for the Base of the Pyramid","Mezzo","Including impoverished communities","Medium"],
+["Civic Design","Mezzo","Public service design","Medium"],
+["Design for Development","Mezzo","Contributing to development processes","Med\u2013long"],
+["Frugal Design","Mezzo","High value with limited resources","Medium"],
+["Design for Social Sustainability","Mezzo\u2192macro","Long-term community welfare","Long"],
+["Feminist Design","Mezzo","Addressing gender inequality","Med\u2013long"],
+["Decolonizing Design","Mezzo\u2192macro","Re-centering local knowledge systems","Long"],
+["Pluriversal Design","Mezzo\u2192macro","Plural ways of living","Long"],
+["Design Activism","Mezzo","Political awareness through design","Medium"],
+["Slow Design","Mezzo","Reflective use and durability","Long"],
+["Design for Sufficiency","Mezzo","Need-level design","Long"],
+["Post-growth Design","Mezzo\u2192macro","Alternative economic models","Long"]]},
+{id:"cevre",t:"Environment-Oriented",L:"E",icon:"\u25C8",c:"var(--cevre)",
+d:"Ecological approaches centered on the natural environment, ecosystems, and planetary boundaries",
+r:[["Green Design","Micro","Limiting environmental impact","Short"],
+["Ecodesign","Micro\u2013mezzo","Life-cycle assessment","Medium"],
+["Circular Design","Mezzo\u2013macro","Closed-loop systems","Long"],
+["Cradle-to-Cradle Design","Mezzo\u2013macro","Creating positive impact","Long"],
+["Biomimicry Design","Micro\u2013macro","Nature-inspired solutions","Med\u2013long"],
+["Restorative Design","Macro","Restoring natural systems","Long"],
+["Regenerative Design","Macro","Improving ecosystems","Long"],
+["Resilient Design","Mezzo\u2013macro","Resistance and recovery capacity","Long"],
+["Biophilic Design","Micro","Reconnecting with nature","Medium"],
+["More-than-human Design","Macro","Sensitivity to non-human actors","Long"],
+["Multispecies Design","Macro","Interspecies justice","Long"]]},
+{id:"sistem",t:"System-Oriented",L:"S",icon:"\u25C7",c:"var(--sistem)",
+d:"Macro-scale structural transformation approaches for socio-technical systems",
+r:[["Systemic Design","Macro","Systems thinking + design","Long"],
+["Transition Design","Macro","Transition to a sustainable future","Long"],
+["Transformation Design","Macro","Design as a change agent","Long"],
+["Strategic Design","Macro","Reframing problems","Med\u2013long"]]},
+{id:"gelecek",t:"Future-Oriented",L:"F",icon:"\u25C6",c:"var(--gelecek)",
+d:"Speculative and critical approaches exploring alternative future scenarios",
+r:[["Speculative Design","Macro","Alternative future scenarios","Long / uncertain"],
+["Futurecraft Design","Macro","Designing future scenarios","Long / uncertain"],
+["Anticipatory Design","Mezzo\u2013macro","Proactive foresight","Med\u2013long"],
+["Ontological Design","Macro","Shaping ways of being","Long / uncertain"]]}
+];
+
+var $=function(s){return document.getElementById(s);};
+function renderGrid(){
+$('G').innerHTML=D.map(function(c){return '<div class="card" data-c="'+c.id+'" onclick="detail(\''+c.id+'\')"><h3><span class="dot" style="background:'+c.c+'"></span>'+c.t+'</h3><p>'+c.d+'</p><span class="tag" style="background:'+c.c+'14;color:'+c.c+'">'+c.r.length+' approaches</span><span class="cnt">'+c.icon+'</span></div>';}).join('');
+}
+
+function detail(id){
+var c;for(var i=0;i<D.length;i++){if(D[i].id===id)c=D[i];}
+$('cL').style.display='none';var d=$('cD');d.style.display='block';
+var rows='';for(var j=0;j<c.r.length;j++){var a=c.r[j];rows+='<tr><td>'+a[0]+'</td><td><span class="tag" style="background:#F0EFEB;color:var(--text-m)">'+a[1]+'</span></td><td style="color:var(--text-m)">'+a[2]+'</td><td><span class="tag" style="background:'+c.c+'10;color:'+c.c+'">'+a[3]+'</span></td></tr>';}
+d.innerHTML='<button class="bk" onclick="back()">\u2190 All Categories</button><div class="detail" style="border-top:3px solid '+c.c+'"><div class="detail-head" style="background:'+c.c+'06"><h2><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:'+c.c+'"></span> '+c.t+' Approaches</h2><p>'+c.d+'</p></div><div class="tw"><table><thead><tr><th>Approach</th><th>Scale</th><th>Design Mission</th><th>Temporal Orientation</th></tr></thead><tbody>'+rows+'</tbody></table></div><div style="padding:16px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;"><a class="btn bp" href="https://github.com/'+REPO+'/issues/new?labels=new-approach&title='+encodeURIComponent('[New Approach] ['+c.t+'] ')+'&body='+encodeURIComponent(newB(c.t))+'" target="_blank">+ Suggest new approach for this category</a><a class="btn bg" href="https://github.com/'+REPO+'/issues/new?labels=modification&title='+encodeURIComponent('[Modification] ['+c.t+'] ')+'&body='+encodeURIComponent(modB(c.t))+'" target="_blank">\u270E Propose a change</a></div></div>';
+}
+
+function back(){$('cD').style.display='none';$('cL').style.display='block';}
+function go(id,el){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});$('s-'+id).classList.add('on');document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');if(id==='overview')back();}
+
+function newB(cat){return "## New Approach Suggestion\n\n**Proposed Category:** "+(cat||"[Select: Individual / Community / Environment / System / Future]")+"\n\n**Approach Name:**  \n[e.g., Neurodiverse Design]\n\n**Intervention Scale:**  \n[Micro / Mezzo / Macro / Micro\u2192mezzo / Mezzo\u2192macro]\n\n**Design Mission:**  \n[Brief description of the core mission]\n\n**Temporal Orientation:**  \n[Short / Short\u2013med / Medium / Med\u2013long / Long / Long\u2013uncertain]\n\n**Rationale & References:**  \n[Explain why this approach should be included. Provide relevant academic references.]\n\n**Secondary Category (if applicable):**  \n[If this approach has a secondary actor-focus, specify it here]\n";}
+
+function modB(cat){return "## Modification Proposal\n\n**Category:** "+(cat||"[Current category of the approach]")+"\n\n**Approach Name:**  \n[Name of the existing approach]\n\n**Proposed Change:**  \n- [ ] Change category to: ___\n- [ ] Change scale to: ___\n- [ ] Change temporal orientation to: ___\n- [ ] Update mission description\n- [ ] Other: ___\n\n**New Values (if applicable):**  \n[Specify the new scale, mission, temporal orientation, etc.]\n\n**Rationale & References:**  \n[Explain why this modification is warranted. Provide supporting references.]\n";}
+
+function comB(){return "## General Comment on the Framework\n\n**Topic:**  \n[e.g., Category boundaries, missing dimensions, methodological considerations]\n\n**Your Comment:**  \n[Share your thoughts, critique, or suggestions regarding the classification framework]\n\n**References (if applicable):**  \n[Any supporting references]\n";}
+
+function setLinks(){
+$('bN').href="https://github.com/"+REPO+"/issues/new?labels=new-approach&title="+encodeURIComponent("[New Approach] ")+"&body="+encodeURIComponent(newB(''));
+$('bM').href="https://github.com/"+REPO+"/issues/new?labels=modification&title="+encodeURIComponent("[Modification] ")+"&body="+encodeURIComponent(modB(''));
+$('bC').href="https://github.com/"+REPO+"/issues/new?labels=comment&title="+encodeURIComponent("[Comment] ")+"&body="+encodeURIComponent(comB());
+$('bA').href="https://github.com/"+REPO+"/issues";
+}
+renderGrid();setLinks();
+</script>
+</body>
+</html>
